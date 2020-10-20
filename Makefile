@@ -8,7 +8,7 @@ docker-build: memory
 	docker-compose up --build -d
 
 test:
-	docker-compose exec php-cli vendor/bin/phpunit --colors=always
+	docker-compose exec php-cli vendor/bin/phpunit
 
 assets-install:
 	docker-compose exec node npm install
