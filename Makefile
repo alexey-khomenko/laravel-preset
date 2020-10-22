@@ -25,6 +25,12 @@ assets-watch:
 queue:
 	docker-compose exec php-cli php artisan queue:work
 
+cache:
+	docker-compose exec php-cli php artisan config:cache
+
+dump:
+	docker-compose exec php-cli composer dump-autoload
+
 horizon:
 	docker-compose exec php-cli php artisan horizon
 
