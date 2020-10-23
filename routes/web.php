@@ -4,9 +4,25 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'HomeController@index')->name('home');
 
+// todo Route::permanentRedirect('/auth', '/auth/login');
+// todo / в конце ссылки
 
-Route::get('/login', 'Auth\LoginController@showLoginForm')->name('login');
-Route::post('/login', 'Auth\RegisterController@login');
+Route::prefix('auth')->name('auth.')->group(function () {
 
-Route::get('/register', 'Auth\RegisterController@showRegistrationForm')->name('register');
-Route::post('/register', 'Auth\RegisterController@register');
+    Route::prefix('login')->group(function () {
+        Route::get('/', 'Auth\LoginController@index')->name('login');
+        Route::post('/', 'Auth\LoginController@login');
+    });
+
+    Route::prefix('register')->group(function () {
+        Route::get('/', 'Auth\RegisterController@index')->name('register');
+        Route::post('/', 'Auth\RegisterController@register');
+    });
+
+    Route::prefix('reset')->group(function () {
+        Route::get('/', 'Auth\ResetController@index')->name('reset');
+        Route::post('/', 'Auth\ResetController@reset');
+    });
+
+    Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
+});

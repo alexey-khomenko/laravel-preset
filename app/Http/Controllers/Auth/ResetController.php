@@ -4,19 +4,19 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 
-class ForgotPasswordController extends Controller
+class ResetController extends Controller
 {
     public function __construct()
     {
         $this->middleware('guest');
     }
 
-    public function showForgotForm()
+    public function index()
     {
-
+        return view('home');
     }
 
-    public function forgot()
+    public function reset()
     {
 
     }

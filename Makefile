@@ -27,8 +27,10 @@ queue:
 
 cache:
 	docker-compose exec php-cli php artisan config:cache
+	docker-compose exec php-cli php artisan route:cache
+	docker-compose exec php-cli php artisan view:cache
 
-dump:
+dump-autoload:
 	docker-compose exec php-cli composer dump-autoload
 
 horizon:
