@@ -24,5 +24,5 @@ Route::prefix('auth')->name('auth.')->group(function () {
         Route::post('/', 'Auth\ResetController@reset');
     });
 
-    Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
+    Route::match(['get', 'post'], '/logout', 'Auth\LoginController@logout')->name('logout');
 });
