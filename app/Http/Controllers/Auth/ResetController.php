@@ -16,7 +16,7 @@ class ResetController extends Controller
         return view('home');
     }
 
-    public function reset()
+    public function check()
     {
 
     }

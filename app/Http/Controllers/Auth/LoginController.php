@@ -18,7 +18,7 @@ class LoginController extends Controller
         return view('home');
     }
 
-    public function login()
+    public function check()
     {
 
     }

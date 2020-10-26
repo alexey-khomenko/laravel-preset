@@ -16,7 +16,7 @@ class RegisterController extends Controller
         return view('home');
     }
 
-    public function register()
+    public function check()
     {
 
     }

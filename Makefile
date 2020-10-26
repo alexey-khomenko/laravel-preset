@@ -45,8 +45,8 @@ horizon-continue:
 horizon-terminate:
 	docker-compose exec php-cli php artisan horizon:terminate
 
-schedule:
-	docker-compose exec php-cli php artisan schedule:work
+telescope:
+	docker-compose exec php-cli php artisan telescope:prune
 
 memory:
 	sudo sysctl -w vm.max_map_count=262144

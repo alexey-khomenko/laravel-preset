@@ -389,15 +389,20 @@
 
     <style>
         body {
-            font-family: 'Nunito';
+            font-family: 'Nunito', sans-serif;
         }
     </style>
 </head>
 <body class="antialiased">
 
-<p>{{ route('auth.login') }}</p>
-<p>{{ route('auth.reset') }}</p>
-<p>{{ route('auth.register') }}</p>
+<ul>
+    <li>{{ route('login') }}</li>
+    <li>{{ route('login.check') }}</li>
+    <li>{{ route('reset') }}</li>
+    <li>{{ route('reset.check') }}</li>
+    <li>{{ route('register') }}</li>
+    <li>{{ route('register.check') }}</li>
+</ul>
 
 <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center sm:pt-0">
     @if (Route::has('login'))
