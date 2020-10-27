@@ -56,7 +56,7 @@ services:
         ports:
             - "33061:3306"
     redis:
-        image: redis:3.0
+        image: redis:6.0
         ports:
             - "63791:6379"
     node:

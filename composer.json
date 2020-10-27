@@ -13,7 +13,9 @@
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
         "laravel/framework": "^8.0",
+        "laravel/horizon": "^5.3",
         "laravel/tinker": "^2.0",
+        "mcamara/laravel-localization": "^1.6",
         "predis/predis": "^1.1"
     },
     "require-dev": {

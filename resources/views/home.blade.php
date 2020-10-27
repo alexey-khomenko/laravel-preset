@@ -394,7 +394,7 @@
     </style>
 </head>
 <body class="antialiased">
-
+{{ LaravelLocalization :: getURLFromRouteNameTranslated ( 'ru' , 'login' )}}
 <ul>
     <li>{{ route('login') }}</li>
     <li>{{ route('login.check') }}</li>
