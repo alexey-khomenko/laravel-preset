@@ -2,25 +2,25 @@
 
 return [
     'supportedLocales'         => [
-            'uk' => [
-                'name'     => 'Ukrainian',
-                'script'   => 'Cyrl',
-                'native'   => 'Українська',
-                'regional' => 'uk_UA',
-            ],
-            'ru' => [
-                'name'     => 'Russian',
-                'script'   => 'Cyrl',
-                'native'   => 'Русский',
-                'regional' => 'ru_RU',
-            ],
-            'en' => [
-                'name'     => 'English',
-                'script'   => 'Latn',
-                'native'   => 'English',
-                'regional' => 'en_GB',
-            ],
+        'ru' => [
+            'name'     => 'Russian',
+            'script'   => 'Cyrl',
+            'native'   => 'Русский',
+            'regional' => 'ru_RU',
         ],
+        'uk' => [
+            'name'     => 'Ukrainian',
+            'script'   => 'Cyrl',
+            'native'   => 'Українська',
+            'regional' => 'uk_UA',
+        ],
+        'en' => [
+            'name'     => 'English',
+            'script'   => 'Latn',
+            'native'   => 'English',
+            'regional' => 'en_GB',
+        ],
+    ],
     // Uncomment the languages that your site supports - or add new ones.
     // These are sorted by the native name, which is the order you might show them in a language selector.
     // Regional languages are sorted by their base language, so "British English" sorts as "English, British"
@@ -328,7 +328,7 @@ return [
     // again if the session expires.
     //
     // If false, system will take app.php locale attribute
-    'useAcceptLanguageHeader'  => false,
+    'useAcceptLanguageHeader'  => true,
 
     // If `hideDefaultLocaleInURL` is true, then a url without locale
     // is identical with the same url with default locale.
@@ -345,7 +345,7 @@ return [
     // If `useAcceptLanguageHeader` is true, then the first time
     // the locale will be determined from browser and redirect to that language.
     // After that, `hideDefaultLocaleInURL` behaves as usual.
-    'hideDefaultLocaleInURL'   => false,
+    'hideDefaultLocaleInURL'   => true,
 
     // If you want to display the locales in particular order in the language selector you should write the order here.
     //CAUTION: Please consider using the appropriate locale code otherwise it will not work

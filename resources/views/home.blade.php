@@ -394,15 +394,8 @@
     </style>
 </head>
 <body class="antialiased">
-{{ LaravelLocalization :: getURLFromRouteNameTranslated ( 'ru' , 'login' )}}
-<ul>
-    <li>{{ route('login') }}</li>
-    <li>{{ route('login.check') }}</li>
-    <li>{{ route('reset') }}</li>
-    <li>{{ route('reset.check') }}</li>
-    <li>{{ route('register') }}</li>
-    <li>{{ route('register.check') }}</li>
-</ul>
+
+@lang('auth.failed')
 
 <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center sm:pt-0">
     @if (Route::has('login'))
