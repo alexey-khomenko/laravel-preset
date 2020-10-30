@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace Modules\User\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Routing\Controller;
+//use App\Http\Controllers\Controller;
 
 class LoginController extends Controller
 {
@@ -15,10 +16,10 @@ class LoginController extends Controller
 
     public function index()
     {
-        return view('home');
+        return view('user::login');
     }
 
-    public function check()
+    public function check(Request $request)
     {
 
     }

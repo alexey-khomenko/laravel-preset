@@ -37,7 +37,10 @@ return [
     |
     */
 
-    'files' => base_path('routes/breadcrumbs.php'),
+    'files' => [
+        base_path('routes/breadcrumbs.php'),
+        base_path('Modules/User/Routes/breadcrumbs.php'),
+    ],
 
     /*
     |--------------------------------------------------------------------------
