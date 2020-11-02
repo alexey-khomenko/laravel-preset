@@ -31,7 +31,7 @@ cache:
 	docker-compose exec php-cli php artisan view:cache
 
 dump-autoload:
-	docker-compose exec php-cli composer dump-autoload
+	docker-compose exec php-cli composer dump-autoload -o
 
 horizon:
 	docker-compose exec php-cli php artisan horizon
