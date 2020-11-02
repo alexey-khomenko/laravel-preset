@@ -6,6 +6,9 @@ docker-down:
 
 docker-build: memory
 	docker-compose up --build -d
+	docker-compose exec php-cli composer install
+	docker-compose exec node yarn install
+	docker-compose exec node yarn run dev
 
 test:
 	docker-compose exec php-cli vendor/bin/phpunit

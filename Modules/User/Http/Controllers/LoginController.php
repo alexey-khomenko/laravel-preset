@@ -2,6 +2,7 @@
 
 namespace Modules\User\Http\Controllers;
 
+use Modules\User\Entities\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Routing\Controller;
@@ -16,7 +17,7 @@ class LoginController extends Controller
 
     public function index()
     {
-        return view('user::login');
+        return view('user::login', ['test' => $this->getTest()]);
     }
 
     public function check(Request $request)
@@ -30,5 +31,10 @@ class LoginController extends Controller
         $request->session()->invalidate();
 
         return redirect()->route('home');
+    }
+
+    private function getTest()
+    {
+        return User::isTest() ? '+' : '-';
     }
 }
