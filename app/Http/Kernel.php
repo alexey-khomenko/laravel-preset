@@ -15,12 +15,13 @@ class Kernel extends HttpKernel
      */
     protected $middleware = [
         // \App\Http\Middleware\TrustHosts::class,
-        \App\Http\Middleware\TrustProxies::class,
-        \Fruitcake\Cors\HandleCors::class,
-        \App\Http\Middleware\PreventRequestsDuringMaintenance::class,
-        \Illuminate\Foundation\Http\Middleware\ValidatePostSize::class,
+        // \App\Http\Middleware\TrustProxies::class,
         \App\Http\Middleware\TrimStrings::class,
+        \Illuminate\Foundation\Http\Middleware\ValidatePostSize::class,
         \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
+
+        \App\Http\Middleware\PreventRequestsDuringMaintenance::class,
+        \Fruitcake\Cors\HandleCors::class,
     ];
 
     /**
@@ -38,12 +39,10 @@ class Kernel extends HttpKernel
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
         ],
-
         'api' => [
-            'throttle:api',
+            'throttle:60,1',
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
         ],
-
         'custom' => [
             'localeSessionRedirect',
             'localizationRedirect',
@@ -65,10 +64,11 @@ class Kernel extends HttpKernel
         'cache.headers'         => \Illuminate\Http\Middleware\SetCacheHeaders::class,
         'can'                   => \Illuminate\Auth\Middleware\Authorize::class,
         'guest'                 => \App\Http\Middleware\RedirectIfAuthenticated::class,
-        'password.confirm'      => \Illuminate\Auth\Middleware\RequirePassword::class,
-        'signed'                => \Illuminate\Routing\Middleware\ValidateSignature::class,
         'throttle'              => \Illuminate\Routing\Middleware\ThrottleRequests::class,
+
+        'password.confirm'      => \Illuminate\Auth\Middleware\RequirePassword::class,
         'verified'              => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
+        'signed'                => \Illuminate\Routing\Middleware\ValidateSignature::class,
 
         // LOCALE MIDDLEWARE
         'localize'              => \Mcamara\LaravelLocalization\Middleware\LaravelLocalizationRoutes::class,
