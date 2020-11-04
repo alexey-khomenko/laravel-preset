@@ -2,9 +2,9 @@
 
 namespace Modules\User\Http\Controllers;
 
+use Modules\User\Entities\User;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Illuminate\Routing\Controller;
-//use App\Http\Controllers\Controller;
 
 class ProfileController extends Controller
 {
