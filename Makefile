@@ -9,6 +9,8 @@ docker-build: memory
 	docker-compose exec php-cli composer install
 	docker-compose exec node yarn install
 	docker-compose exec node yarn run dev
+	sudo chgrp -R www-data storage bootstrap/cache
+	sudo chmod -R ug+rwx storage bootstrap/cache
 
 test:
 	docker-compose exec php-cli vendor/bin/phpunit
