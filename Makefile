@@ -35,6 +35,11 @@ cache:
 	docker-compose exec php-cli php artisan route:trans:cache
 	docker-compose exec php-cli php artisan view:cache
 
+clear:
+	docker-compose exec php-cli php artisan config:clear
+	docker-compose exec php-cli php artisan route:trans:clear
+	docker-compose exec php-cli php artisan view:clear
+
 dump-autoload:
 	docker-compose exec php-cli composer dump-autoload -o
 

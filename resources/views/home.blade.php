@@ -397,9 +397,9 @@
 
 {{ Breadcrumbs::render('home') }}
 
-<p>{{ LaravelLocalization::getLocalizedURL('ru') }}</p>
-<p>{{ LaravelLocalization::getLocalizedURL('uk') }}</p>
-<p>{{ LaravelLocalization::getLocalizedURL('en') }}</p>
+<p><a href="{{ LaravelLocalization::getLocalizedURL('ru') }}">{{ LaravelLocalization::getLocalizedURL('ru') }}</a></p>
+<p><a href="{{ LaravelLocalization::getLocalizedURL('uk') }}">{{ LaravelLocalization::getLocalizedURL('uk') }}</a></p>
+<p><a href="{{ LaravelLocalization::getLocalizedURL('en') }}">{{ LaravelLocalization::getLocalizedURL('en') }}</a></p>
 
 <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center sm:pt-0">
     @if (Route::has('login'))

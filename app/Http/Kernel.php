@@ -44,7 +44,7 @@ class Kernel extends HttpKernel
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
         ],
         'custom' => [
-            'localeSessionRedirect',
+            //'localeSessionRedirect',
             'localizationRedirect',
             'localeViewPath',
             'slash',
