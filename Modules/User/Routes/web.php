@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::prefix(LaravelLocalization::setLocale())->middleware(['web', 'custom'])->group(function () {
+Route::prefix(LaravelLocalization::setLocale())->middleware(['custom'])->group(function () {
 
     Route::prefix('profile')->group(function () {
         Route::get('', 'ProfileController@index')->name('profile');
