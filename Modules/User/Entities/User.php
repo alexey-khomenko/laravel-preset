@@ -4,8 +4,17 @@ namespace Modules\User\Entities;
 
 class User
 {
-    public static function isTest(): bool
-    {
-        return false;
-    }
+//    тут
+//    public static function isTest(): bool
+//    {
+//        return true;
+//    }
+
+//    там
+//    use Modules\User\Entities\User;
+//
+//    private function getTest(): string
+//    {
+//        return User::isTest() ? '+' : '-';
+//    }
 }
