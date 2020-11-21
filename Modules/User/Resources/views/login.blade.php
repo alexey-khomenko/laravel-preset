@@ -4,7 +4,7 @@
     {{ Breadcrumbs::render('login') }}
     <h1>Hello World</h1>
 
-    <p>
+    <p class="capitalize">
         This view is loaded from module: {!! config('user.name') !!}
     </p>
 @endsection

@@ -15,7 +15,10 @@ mix
     .setPublicPath('public/build')
     .setResourceRoot('/build/')
     .js('resources/js/app.js', 'js')
-    //.postCss('resources/css/app.css', 'css', [
-
-    //])
+    .sass('resources/css/app.scss', 'public/build/css/app.css')
+    .options({
+        postCss: [
+            require('tailwindcss')('tailwind.config.js'),
+        ]
+    })
 ;
