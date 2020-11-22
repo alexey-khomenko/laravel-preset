@@ -1,10 +1,13 @@
-@extends('user::layouts.master')
+@extends('layouts.app')
+
+@section('title')
+    @lang('user::breadcrumbs.reset')
+@endsection
+
+@section('breadcrumbs')
+    {{ Breadcrumbs::render('reset') }}
+@endsection
 
 @section('content')
-    {{ Breadcrumbs::render('reset') }}
-    <h1>Hello World</h1>
-
-    <p>
-        This view is loaded from module: {!! config('user.name') !!}
-    </p>
+    <h1>@lang('user::breadcrumbs.reset')</h1>
 @endsection

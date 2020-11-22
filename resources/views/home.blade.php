@@ -1,22 +1,19 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.app')
 
-    <title>Laravel</title>
-    <link rel="stylesheet" href="{{ mix('css/app.css', 'build') }}">
-</head>
-<body>
+@section('title')
+    @lang('breadcrumbs.home')
+@endsection
 
-{{ Breadcrumbs::render('home') }}
+@section('breadcrumbs')
+    {{ Breadcrumbs::render('home') }}
+@endsection
 
-<p><a href="{{ LaravelLocalization::getLocalizedURL('ru') }}">{{ LaravelLocalization::getLocalizedURL('ru') }}</a></p>
-<p><a href="{{ LaravelLocalization::getLocalizedURL('uk') }}">{{ LaravelLocalization::getLocalizedURL('uk') }}</a></p>
-<p><a href="{{ LaravelLocalization::getLocalizedURL('en') }}">{{ LaravelLocalization::getLocalizedURL('en') }}</a></p>
-
-<p class="flow-root">TEST</p>
-
-<script src="{{ mix('js/app.js', 'build') }}"></script>
-</body>
-</html>
+@section('content')
+    <h1>@lang('breadcrumbs.home')</h1>
+    <div class="flex space-x-4 justify-evenly">
+        <a href="{{ route('login') }}">@lang('user::breadcrumbs.login')</a>
+        <a href="{{ route('profile') }}">@lang('user::breadcrumbs.profile')</a>
+        <a href="{{ route('register') }}">@lang('user::breadcrumbs.register')</a>
+        <a href="{{ route('reset') }}">@lang('user::breadcrumbs.reset')</a>
+    </div>
+@endsection

@@ -1,10 +1,13 @@
-@extends('user::layouts.master')
+@extends('layouts.app')
+
+@section('title')
+    @lang('user::breadcrumbs.profile')
+@endsection
+
+@section('breadcrumbs')
+    {{ Breadcrumbs::render('profile') }}
+@endsection
 
 @section('content')
-    {{ Breadcrumbs::render('profile') }}
-    <h1>Hello World</h1>
-
-    <p>
-        This view is loaded from module: {!! config('user.name') !!}
-    </p>
+    <h1>@lang('user::breadcrumbs.profile')</h1>
 @endsection
