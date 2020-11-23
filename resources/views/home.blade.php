@@ -14,5 +14,6 @@
             <x-test.button-test :route="$route"/>
         @endforeach
     </div>
+{{--    if env = prod ? mix : asset --}}
 {{--    <img src="{{ mix('images/logo.png', 'build') }}" alt="logo" class="mx-auto"/>--}}
 @endsection
