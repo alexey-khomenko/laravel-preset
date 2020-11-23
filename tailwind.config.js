@@ -1,6 +1,6 @@
 module.exports = {
   purge: {
-    //enabled: true,
+    // enabled: true,
     content: [
         './resources/views/**/*.blade.php',
         './Modules/*/Resources/views/**/*.blade.php'
@@ -13,7 +13,7 @@ module.exports = {
       'lg': {'max': '1279px'},
       'md': {'max': '1023px'},
       'sm': {'max': '767px'},
-      'xs': {'max': '639px'},
+      'xs': {'max': '479px'}, // 639
     },
     extend: {},
   },

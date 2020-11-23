@@ -1,13 +1,13 @@
 @unless ($breadcrumbs->isEmpty())
-    <ol class="flex space-x-4 justify-start">
+    <ol class="flex flex-wrap justify-start -mx-3">
         @foreach ($breadcrumbs as $breadcrumb)
-            <li class="py-3">
+            <li class="mx-3">
                 @if (!is_null($breadcrumb->url) && !$loop->last)
-                    <a href="{{ $breadcrumb->url }}" class="text-red-500 hover:text-red-800">
+                    <a href="{{ $breadcrumb->url }}" class="block py-3 text-red-500 hover:text-red-800">
                         {{ $breadcrumb->title }}
                     </a>
                 @else
-                    <span class="text-green-500">
+                    <span class="block py-3 text-green-500">
                         {{ $breadcrumb->title }}
                     </span>
                 @endif
