@@ -14,12 +14,17 @@ const mix = require('laravel-mix');
 mix
     .setPublicPath('public/build')
     .setResourceRoot('/build/')
+    .copyDirectory('resources/img', 'public/build')
+
+//    .version(['public/build/images/logo.png', 'public/build/favicon.ico'])
+
     .js('resources/js/app.js', 'js')
-    .sass('resources/css/app.scss', 'public/build/css/app.css')
+    .sass('resources/css/app.scss', 'css')
     .options({
         postCss: [
             require('tailwindcss')('tailwind.config.js'),
-        ]
+        ],
+        processCssUrls: false
     })
 ;
 
