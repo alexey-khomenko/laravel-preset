@@ -14,10 +14,8 @@ const mix = require('laravel-mix');
 mix
     .setPublicPath('public/build')
     .setResourceRoot('/build/')
-    .copyDirectory('resources/img', 'public/build')
-
-//    .version(['public/build/images/logo.png', 'public/build/favicon.ico'])
-
+    .copyDirectory('resources/images', 'public/build/images')
+    .copyDirectory('resources/favicons', 'public/build/favicons')
     .js('resources/js/app.js', 'js')
     .sass('resources/css/app.scss', 'css')
     .options({
@@ -28,4 +26,16 @@ mix
     })
 ;
 
-if (mix.inProduction()) mix.version();
+if (mix.inProduction()) {
+    const fs = require('fs');
+    const configs = [
+        'resources/configs/favicons.json',
+        'resources/configs/images.json',
+    ];
+
+    configs.forEach(function (value) {
+        JSON.parse(fs.readFileSync(value).toString()).forEach(function (value) {
+            mix.version(value);
+        });
+    });
+}
