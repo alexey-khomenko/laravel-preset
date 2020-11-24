@@ -7,7 +7,7 @@
     <title>@yield('title') - Laravel</title>
     @include('layouts.partials.favicons')
 </head>
-<body class="antialiased">
+<body class="bg-image bg-white antialiased">
 
 <div class="container bg-indigo-100 mx-auto xl:w-full min-h-screen px-4">
     @include('layouts.partials.languages')
