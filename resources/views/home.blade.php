@@ -15,7 +15,12 @@
         @endforeach
     </div>
 
-    <img src="{{ env('APP_ENV') === 'production' ? mix('images/logo.png', 'build') : asset('build/images/logo.png') }}"
-         alt="logo" class="mx-auto"
-    />
+    <picture class="block">
+        <source srcset="{{ emptySrc() }}"
+                data-srcset="{{ mixAsset('images/logo.webp') }}" type="image/webp"/>
+        <img src="{{ emptySrc() }}" class="lazyload mx-auto" alt="Лого" width="192" height="192"
+             data-src="{{ mixAsset('images/logo.png') }}" />
+    </picture>
+
+    <hr class="border-black"/>
 @endsection

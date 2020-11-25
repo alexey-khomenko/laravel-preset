@@ -23,5 +23,8 @@
         "sass-loader": "^8.0.2",
         "tailwindcss": "^2.0.1",
         "vue-template-compiler": "^2.6.12"
+    },
+    "dependencies": {
+        "lazysizes": "^5.2.2"
     }
 }

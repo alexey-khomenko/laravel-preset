@@ -15,6 +15,8 @@
     @yield('content')
 </div>
 
-<script src="{{ mix('js/app.js', 'build') }}"></script>
+<script src="{{ mix('js/manifest.js', 'build') }}" async></script>
+<script src="{{ mix('js/vendor.js', 'build') }}" async></script>
+<script src="{{ mix('js/app.js', 'build') }}" async></script>
 </body>
 </html>

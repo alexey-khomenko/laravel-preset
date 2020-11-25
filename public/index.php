@@ -5,6 +5,21 @@ use Illuminate\Http\Request;
 
 define('LARAVEL_START', microtime(true));
 
+//<-----
+// todo: Сделать функцию mixAsset, доступную в views
+function mixAsset ($path) {
+    $path = substr($path, 0, 1) === '/' ? substr($path, 1) : $path;
+
+    return env('APP_ENV') === 'production' ? mix($path, 'build') : asset('build/' . $path);
+}
+// todo: Сделать функцию emptySrc, доступную в views
+function emptySrc (): string
+{
+    return 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==';
+}
+// todo: Сделать функцию webpSupport, доступную в views
+//<-----
+
 /*
 |--------------------------------------------------------------------------
 | Check If Application Is Under Maintenance
