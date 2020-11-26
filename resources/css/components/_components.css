@@ -1,0 +1,7 @@
+.image-ratio-picture {
+    @apply block relative h-0 w-full
+}
+
+.image-ratio-img {
+    @apply absolute h-full w-full left-0 top-0
+}
