@@ -1,7 +1,13 @@
+// todo className prefix
+
 .container {
   max-width: var(--container-width);
 }
 
 .bg-image {
   background-image: var(--bg-image);
+}
+
+.pb-full {
+  padding-bottom: 100%;
 }

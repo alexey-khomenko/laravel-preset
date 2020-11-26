@@ -7,11 +7,7 @@ use Illuminate\View\Component;
 class ButtonTest extends Component
 {
     public $route;
-    /**
-     * Create a new component instance.
-     *
-     * @return void
-     */
+
     /**
      * Create a new component instance.
      *

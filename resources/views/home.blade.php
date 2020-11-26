@@ -16,10 +16,7 @@
     </div>
 
     <div class="w-40 mx-auto">
-        <picture class="image-ratio-picture" style="padding-bottom: 100%">
-            <source srcset="{{ emptySrc() }}" type="image/webp" data-srcset="{{ mixAsset('images/logo.webp') }}"/>
-            <img src="{{ emptySrc() }}" class="image-ratio-img lazyload" alt="Лого"
-                 data-src="{{ mixAsset('images/logo.png') }}"/>
-        </picture>
+        <x-test.image :alt="$logo['alt']" :src="$logo['src']" :srcset="$logo['srcset']"/>
+        {{-- todo className (pb-full) не обязательный параметр --}}
     </div>
 @endsection
