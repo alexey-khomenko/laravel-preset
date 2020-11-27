@@ -6,8 +6,6 @@ class HomeController extends Controller
 {
     public function index()
     {
-        return view('home', [
-            'logo' => ['alt' => 'Лого', 'src' => 'images/logo.png', 'srcset' => 'images/logo.webp'],
-        ]);
+        return view('home');
     }
 }

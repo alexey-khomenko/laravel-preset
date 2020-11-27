@@ -1,13 +1,17 @@
-// todo className prefix
-
-.container {
+.l--container {
   max-width: var(--container-width);
 }
 
-.bg-image {
+.l--bg-image {
   background-image: var(--bg-image);
 }
 
-.pb-full {
-  padding-bottom: 100%;
+.l--image {
+  &-square {
+    padding-bottom: 100%;
+  }
+
+  &-hd {
+    padding-bottom: 56.25%;
+  }
 }
