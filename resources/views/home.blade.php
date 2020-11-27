@@ -16,10 +16,6 @@
     </div>
 
     <div class="w-40 mx-auto">
-        <x-test.image alt="Лого" src="images/logo.png" srcset="images/logo.webp" class="l--image-square"/>
-    </div>
-
-    <div class="w-40 mx-auto">
         <x-test.image alt="Лого" src="images/logo.png" srcset="images/logo.webp" ratio="100"/>
     </div>
 @endsection
