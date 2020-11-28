@@ -17,14 +17,17 @@ class Image extends Component
      * @param String $alt
      * @param String $src
      * @param String $srcset
-     * @param Float $ratio
+     * @param Int $width
+     * @param Int $height
      * @return void
      */
-    public function __construct(String $alt, String $src, String $srcset, Float $ratio = 0.0)
+    public function __construct(String $alt, String $src, String $srcset, Int $width, Int $height)
     {
         $this->alt = $alt;
         $this->src = mixAsset($src);
         $this->srcset = mixAsset($srcset);
+
+        $ratio = round(($height / $width) * 100, 2);
         $this->ratio = $ratio > 0 ? $ratio : 0;
     }
 
