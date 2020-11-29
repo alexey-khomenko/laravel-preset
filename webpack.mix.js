@@ -22,8 +22,7 @@ mix
     .options({
         postCss: [
             require('tailwindcss')('tailwind.config.js'),
-        ]//,
-        //processCssUrls: false
+        ]
     })
 ;
 

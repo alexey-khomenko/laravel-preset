@@ -17,7 +17,6 @@ function emptySrc (): string
 {
     return 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==';
 }
-// todo: Сделать функцию webpSupport, доступную в views
 //<-----
 
 /*
