@@ -1,7 +1,7 @@
 <picture
         @if ($ratio === 100.0)
         class="l--image-picture l--image-square"
-        @elseif ($ratio == 56.25)
+        @elseif ($ratio === 56.25)
         class="l--image-picture l--image-hd"
         @elseif ($ratio > 0)
         class="l--image-picture" style="padding-bottom: {{ $ratio }}%;"

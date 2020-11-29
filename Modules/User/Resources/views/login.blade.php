@@ -9,5 +9,5 @@
 @endsection
 
 @section('content')
-    <h1>@lang('user::breadcrumbs.login')</h1>
+    <x-user::test.login/>
 @endsection

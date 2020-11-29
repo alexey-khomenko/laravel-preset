@@ -3,18 +3,20 @@
 namespace App\View\Components\Layouts;
 
 use Illuminate\View\Component;
+use Jenssegers\Agent\Agent;
 
 class Body extends Component
 {
-
+    public $apple;
     /**
      * Create a new component instance.
      *
+     * @param Agent $agent
      * @return void
      */
-    public function __construct()
+    public function __construct(Agent $agent)
     {
-        // todo class l--webp-off
+        $this->apple = $agent->isDesktop();
     }
 
     /**
@@ -24,6 +26,6 @@ class Body extends Component
      */
     public function render()
     {
-        return view('components.layouts.body');
+        return view('layouts.partials.body');
     }
 }
