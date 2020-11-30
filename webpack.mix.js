@@ -41,5 +41,5 @@ if (mix.inProduction()) {
         });
     });
 } else {
-    mix.browserSync('https://localhost:8080');
+    mix.browserSync(process.env.APP_URL);
 }
