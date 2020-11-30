@@ -27,6 +27,8 @@ mix
 ;
 
 if (mix.inProduction()) {
+    // todo сжать картинки
+
     const fs = require('fs');
     const configs = [
         'resources/configs/favicons.json',
@@ -38,4 +40,6 @@ if (mix.inProduction()) {
             mix.version(value);
         });
     });
+} else {
+    mix.browserSync('https://localhost:8080');
 }
