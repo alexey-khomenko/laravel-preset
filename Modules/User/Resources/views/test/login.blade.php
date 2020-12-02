@@ -1,1 +1,3 @@
-<h1>@lang('user::breadcrumbs.login') - {{ $test }}</h1>
+{{-- todo нужно пространство имен для компонентов, что бы не путаться --}}
+
+<h1>@lang('user::breadcrumbs.login')</h1>

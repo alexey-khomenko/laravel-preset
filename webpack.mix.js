@@ -29,7 +29,6 @@ mix
 if (mix.inProduction()) {
     // todo сжать картинки
 
-    // todo уйти от конфига. сканировать папки на файлы рекурсивно
     const fs = require('fs');
     const configs = [
         'resources/configs/favicons.json',

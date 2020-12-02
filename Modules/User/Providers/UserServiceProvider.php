@@ -5,6 +5,9 @@ namespace Modules\User\Providers;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Database\Eloquent\Factory;
 
+use Illuminate\Support\Facades\Blade;
+use Modules\User\View\Components\Test\Login;
+
 class UserServiceProvider extends ServiceProvider
 {
     /**
@@ -28,6 +31,8 @@ class UserServiceProvider extends ServiceProvider
         $this->registerConfig();
         $this->registerViews();
         $this->loadMigrationsFrom(module_path($this->moduleName, 'Database/Migrations'));
+
+        Blade::component('user::test.login', Login::class);
     }
 
     /**
