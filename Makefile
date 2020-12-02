@@ -16,7 +16,10 @@ docker-build: memory
 test:
 	docker-compose exec php-cli vendor/bin/phpunit
 
-assets-install:
+assets:
+	yarn run watch
+
+assets-i:
 	docker-compose exec node yarn install
 
 assets-rebuild:
@@ -28,9 +31,6 @@ assets-dev:
 assets-prod:
 	docker-compose exec node yarn run prod
 
-assets-watch:
-	yarn run watch
-
 queue:
 	docker-compose exec php-cli php artisan queue:work
 
@@ -40,12 +40,10 @@ cache:
 	docker-compose exec php-cli php artisan view:cache
 
 clear:
+	docker-compose exec php-cli composer dump-autoload -o
 	docker-compose exec php-cli php artisan config:clear
 	docker-compose exec php-cli php artisan route:trans:clear
 	docker-compose exec php-cli php artisan view:clear
-
-dump-autoload:
-	docker-compose exec php-cli composer dump-autoload -o
 
 horizon:
 	docker-compose exec php-cli php artisan horizon

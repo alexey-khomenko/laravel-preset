@@ -29,6 +29,7 @@ mix
 if (mix.inProduction()) {
     // todo сжать картинки
 
+    // todo уйти от конфига. сканировать папки на файлы рекурсивно
     const fs = require('fs');
     const configs = [
         'resources/configs/favicons.json',
@@ -41,5 +42,11 @@ if (mix.inProduction()) {
         });
     });
 } else {
-    mix.browserSync(process.env.APP_URL);
+    mix.browserSync({
+        proxy: process.env.APP_URL,
+        files: [
+            'Modules/*/Resources/**/*.*',
+            'resources/**/*.*',
+        ],
+    });
 }
