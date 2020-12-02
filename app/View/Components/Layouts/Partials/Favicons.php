@@ -1,22 +1,20 @@
 <?php
 
-namespace App\View\Components\Layouts;
+namespace App\View\Components\Layouts\Partials;
 
 use Illuminate\View\Component;
 use Jenssegers\Agent\Agent;
 
-class Body extends Component
+class Favicons extends Component
 {
-    public $apple;
     /**
      * Create a new component instance.
      *
-     * @param Agent $agent
      * @return void
      */
-    public function __construct(Agent $agent)
+    public function __construct()
     {
-        $this->apple = $agent->isSafari();
+
     }
 
     /**
@@ -26,6 +24,6 @@ class Body extends Component
      */
     public function render()
     {
-        return view('layouts.partials.body');
+        return view('layouts.partials.favicons');
     }
 }

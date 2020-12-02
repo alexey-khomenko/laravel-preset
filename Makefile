@@ -9,6 +9,7 @@ docker-build: memory
 	docker-compose exec php-cli composer install
 	docker-compose exec node yarn install
 	docker-compose exec node yarn run dev
+	docker-compose exec php-cli php artisan telescope:install
 	docker-compose exec php-cli php artisan migrate
 	sudo chgrp -R www-data storage bootstrap/cache
 	sudo chmod -R ug+rwx storage bootstrap/cache
@@ -39,11 +40,14 @@ cache:
 	docker-compose exec php-cli php artisan route:trans:cache
 	docker-compose exec php-cli php artisan view:cache
 
-clear:
+autoload:
 	docker-compose exec php-cli composer dump-autoload -o
+
+clear:
 	docker-compose exec php-cli php artisan config:clear
 	docker-compose exec php-cli php artisan route:trans:clear
 	docker-compose exec php-cli php artisan view:clear
+	docker-compose exec php-cli php artisan telescope:prune
 
 horizon:
 	docker-compose exec php-cli php artisan horizon
@@ -56,9 +60,6 @@ horizon-continue:
 
 horizon-terminate:
 	docker-compose exec php-cli php artisan horizon:terminate
-
-telescope:
-	docker-compose exec php-cli php artisan telescope:prune
 
 memory:
 	sudo sysctl -w vm.max_map_count=262144

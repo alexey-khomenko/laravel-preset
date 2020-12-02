@@ -9,5 +9,5 @@
 @endsection
 
 @section('content')
-    <h1>@lang('user::breadcrumbs.register')</h1>
+    <x-user::partials.h1 :title="__('user::breadcrumbs.register')"/>
 @endsection

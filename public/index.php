@@ -12,11 +12,6 @@ function mixAsset ($path) {
 
     return env('APP_ENV') === 'production' ? mix($path, 'build') : asset('build/' . $path);
 }
-// todo: Сделать функцию emptySrc, доступную в views
-function emptySrc (): string
-{
-    return 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==';
-}
 //<-----
 
 /*

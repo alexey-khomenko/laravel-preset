@@ -1,22 +1,22 @@
 <?php
 
-namespace App\View\Components\Test;
+namespace Modules\User\View\Components\Partials;
 
 use Illuminate\View\Component;
 
-class ButtonTest extends Component
+class H1 extends Component
 {
-    public $route;
+    public $title;
 
     /**
      * Create a new component instance.
      *
-     * @param String $route
+     * @param String $title
      * @return void
      */
-    public function __construct(String $route)
+    public function __construct(String $title)
     {
-        $this->route = $route;
+        $this->title = $title;
     }
 
     /**
@@ -26,6 +26,6 @@ class ButtonTest extends Component
      */
     public function render()
     {
-        return view('components.test.button-test');
+        return view('user::partials.h1');
     }
 }

@@ -9,5 +9,5 @@
 @endsection
 
 @section('content')
-    <x-user::test.login/>
+    <x-user::partials.h1 :title="__('user::breadcrumbs.login')"/>
 @endsection

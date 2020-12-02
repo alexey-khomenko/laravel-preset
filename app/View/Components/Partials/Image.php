@@ -1,6 +1,6 @@
 <?php
 
-namespace App\View\Components\Test;
+namespace App\View\Components\Partials;
 
 use Illuminate\View\Component;
 
@@ -10,6 +10,7 @@ class Image extends Component
     public $src;
     public $srcset;
     public $ratio;
+    public $empty_src;
 
     /**
      * Create a new component instance.
@@ -29,6 +30,9 @@ class Image extends Component
 
         $ratio = round(($height / $width) * 100, 2);
         $this->ratio = $ratio > 0 ? $ratio : 0;
+
+        // https://laravel.com/docs/8.x/views#sharing-data-with-all-views
+        $this->empty_src = 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==';
     }
 
     /**

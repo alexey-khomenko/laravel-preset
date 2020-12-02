@@ -1,20 +1,23 @@
 <?php
 
-namespace Modules\User\View\Components\Test;
+namespace App\View\Components\Layouts\Partials;
 
 use Illuminate\View\Component;
+use Jenssegers\Agent\Agent;
 
-class Login extends Component
+class Body extends Component
 {
+    public $apple;
 
     /**
      * Create a new component instance.
      *
+     * @param Agent $agent
      * @return void
      */
-    public function __construct()
+    public function __construct(Agent $agent)
     {
-
+        $this->apple = $agent->isSafari();
     }
 
     /**
@@ -24,6 +27,6 @@ class Login extends Component
      */
     public function render()
     {
-        return view('user::test.login');
+        return view('layouts.partials.body');
     }
 }

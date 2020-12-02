@@ -7,6 +7,6 @@
         class="l--image-picture" style="padding-bottom: {{ $ratio }}%;"
         @endif
 >
-    <source srcset="{{ emptySrc() }}" type="image/webp" data-srcset="{{ $srcset }}"/>
-    <img src="{{ emptySrc() }}" class="l--image-img lazyload" alt="{{ $alt }}" data-src="{{ $src }}"/>
+    <source srcset="{{ $empty_src }}" type="image/webp" data-srcset="{{ $srcset }}"/>
+    <img src="{{ $empty_src }}" class="l--image-img lazyload" alt="{{ $alt }}" data-src="{{ $src }}"/>
 </picture>
