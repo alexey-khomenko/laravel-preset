@@ -10,7 +10,9 @@
 <x-layouts.partials.body>
     <div class="l--container bg-indigo-100 xl:w-full min-h-screen mx-auto px-4">
         <x-layouts.partials.languages/>
-        @yield('breadcrumbs')
+        @hasSection('breadcrumbs')
+            @yield('breadcrumbs')
+        @endif
         @yield('content')
     </div>
     <script src="{{ mix('js/manifest.js', 'build') }}" async></script>

@@ -4,9 +4,6 @@
     @lang('breadcrumbs.429')
 @endsection
 
-@section('breadcrumbs')
-@endsection
-
 @section('content')
     @lang('breadcrumbs.429')
 @endsection

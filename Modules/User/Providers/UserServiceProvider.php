@@ -6,7 +6,6 @@ use Illuminate\Support\ServiceProvider;
 use Illuminate\Database\Eloquent\Factory;
 
 use Illuminate\Support\Facades\Blade;
-use Modules\User\View\Components\Partials\H1;
 
 class UserServiceProvider extends ServiceProvider
 {
@@ -32,7 +31,7 @@ class UserServiceProvider extends ServiceProvider
         $this->registerViews();
         $this->loadMigrationsFrom(module_path($this->moduleName, 'Database/Migrations'));
 
-        Blade::component('user::partials.h1', H1::class);
+        Blade::componentNamespace('Modules\\User\\View\\Components', 'user');
     }
 
     /**
