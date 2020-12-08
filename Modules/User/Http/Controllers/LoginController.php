@@ -5,6 +5,7 @@ namespace Modules\User\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\RedirectResponse;
 
 class LoginController extends Controller
 {
@@ -18,14 +19,27 @@ class LoginController extends Controller
         return view('user::login');
     }
 
-    public function check(Request $request)
+    /**
+     * @param Request $request
+     * @param Auth $auth
+     * @return RedirectResponse
+     */
+    public function check(Request $request, Auth $auth): RedirectResponse
     {
+        // todo email -> login
+        $credentials = $request->only('email', 'password');
 
+        if ($auth->attempt($credentials, true)) return redirect()->intended('dashboard');
     }
 
-    public function logout(Request $request)
+    /**
+     * @param Request $request
+     * @param Auth $auth
+     * @return RedirectResponse
+     */
+    public function logout(Request $request, Auth $auth): RedirectResponse
     {
-        Auth::guard()->logout();
+        $auth->logout();
         $request->session()->invalidate();
 
         return redirect()->route('home');
