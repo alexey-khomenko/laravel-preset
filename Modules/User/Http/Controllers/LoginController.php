@@ -21,26 +21,40 @@ class LoginController extends Controller
 
     /**
      * @param Request $request
-     * @param Auth $auth
      * @return RedirectResponse
      */
-    public function check(Request $request, Auth $auth): RedirectResponse
+    public function check(Request $request): RedirectResponse
     {
-        // todo email -> login
+        // todo login
+        // email -> login
+        // return 1
+        // return 2
+
         $credentials = $request->only('email', 'password');
 
-        if ($auth->attempt($credentials, true)) return redirect()->intended('dashboard');
+        if (Auth::attempt($credentials, true)) {
+            $request->session()->regenerate();
+
+            return redirect()->intended(route('home'));
+        }
+
+        return back()->withErrors([
+            'email' => 'The provided credentials do not match our records.',
+        ]);
     }
 
     /**
      * @param Request $request
-     * @param Auth $auth
      * @return RedirectResponse
      */
-    public function logout(Request $request, Auth $auth): RedirectResponse
+    public function logout(Request $request): RedirectResponse
     {
-        $auth::logout();
+        Auth::logout();
         $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
+        // todo logout
+        // back()
 
         return redirect()->route('home');
     }

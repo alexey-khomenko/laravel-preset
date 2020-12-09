@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::prefix(LaravelLocalization::setLocale())->middleware(['custom'])->group(function () {
 
-    Route::prefix('profile')->group(function () {
+    Route::prefix('profile')->middleware(['auth'])->group(function () {
         Route::get('', 'ProfileController@index')->name('profile');
         Route::post('/check', 'ProfileController@check')->name('profile.check');
     });
