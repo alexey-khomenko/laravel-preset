@@ -99,11 +99,12 @@ return [
         | Customise the paths where the folders will be generated.
         | Set the generate key to false to not generate that folder
         */
+        // todo Entities
         'generator' => [
             'config' => ['path' => 'Config', 'generate' => true],
             'command' => ['path' => 'Console', 'generate' => true],
-            'migration' => ['path' => 'Database/Migrations', 'generate' => true],
-            'seeder' => ['path' => 'Database/Seeders', 'generate' => true],
+            'migration' => ['path' => 'Database/migrations', 'generate' => true],
+            'seeder' => ['path' => 'Database/seeders', 'generate' => true],
             'factory' => ['path' => 'Database/factories', 'generate' => true],
             'model' => ['path' => 'Entities', 'generate' => true],
             'routes' => ['path' => 'Routes', 'generate' => true],
