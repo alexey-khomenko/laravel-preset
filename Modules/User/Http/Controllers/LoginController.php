@@ -26,11 +26,10 @@ class LoginController extends Controller
     public function check(Request $request): RedirectResponse
     {
         // todo login
-        // email -> login
         // return 1
         // return 2
 
-        $credentials = $request->only('email', 'password');
+        $credentials = $request->only('login', 'password');
 
         if (Auth::attempt($credentials, true)) {
             $request->session()->regenerate();
@@ -54,7 +53,7 @@ class LoginController extends Controller
         $request->session()->regenerateToken();
 
         // todo logout
-        // back()
+        // back() // на предыдущую страницу
 
         return redirect()->route('home');
     }

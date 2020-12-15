@@ -10,6 +10,7 @@ docker-build: memory
 	docker-compose exec node yarn install
 	docker-compose exec node yarn run dev
 	docker-compose exec php-cli php artisan migrate
+	docker-compose exec php-cli php artisan module:migrate User
 	sudo chgrp -R www-data storage bootstrap/cache
 	sudo chmod -R ug+rwx storage bootstrap/cache
 
