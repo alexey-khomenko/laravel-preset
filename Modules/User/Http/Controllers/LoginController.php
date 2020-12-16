@@ -52,6 +52,7 @@ class LoginController extends Controller
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
-        return redirect()->back();
+        return redirect()->back()->getTargetUrl() === env('APP_URL') ? redirect()->route('home')
+            : redirect()->back();
     }
 }

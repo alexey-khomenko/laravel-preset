@@ -13,6 +13,13 @@
         @hasSection('breadcrumbs')
             @yield('breadcrumbs')
         @endif
+
+        <div class="grid grid-cols-5 md:grid-cols-3 sm:grid-cols-2 xs:grid-cols-1 gap-3 my-3">
+            @foreach (['login', 'register', 'reset', 'profile', 'logout'] as $route)
+                <x-partials.button-test :route="$route"/>
+            @endforeach
+        </div>
+
         @yield('content')
     </div>
     <script src="{{ mix('js/manifest.js', 'build') }}" async></script>
