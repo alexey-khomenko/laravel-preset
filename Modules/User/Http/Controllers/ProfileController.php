@@ -10,7 +10,8 @@ class ProfileController extends Controller
 {
     public function __construct()
     {
-
+        // todo в middleware предыдущая страница == logout ? redirect route('home')
+        $this->middleware('auth');
     }
 
     public function index()
@@ -20,6 +21,6 @@ class ProfileController extends Controller
 
     public function check(Request $request)
     {
-
+        //
     }
 }

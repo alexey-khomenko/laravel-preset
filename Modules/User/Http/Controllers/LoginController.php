@@ -52,9 +52,6 @@ class LoginController extends Controller
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
-        // todo logout
-        // back() // на предыдущую страницу
-
-        return redirect()->route('home');
+        return redirect()->back();
     }
 }
