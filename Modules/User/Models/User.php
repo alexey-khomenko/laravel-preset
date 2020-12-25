@@ -2,7 +2,7 @@
 
 namespace Modules\User\Models;
 
-// use Illuminate\Database\Eloquent\Model;
+// use Illuminate\Database\Eloquent\Model; // было
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Modules\User\Database\factories\UserFactory;
@@ -10,7 +10,7 @@ use Modules\User\Database\factories\UserFactory;
 // todo SoftDeletes - надо или нет?
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class User extends Authenticatable  // extends Model
+class User extends Authenticatable // extends Model // было
 {
     use HasFactory, SoftDeletes;
 
@@ -44,7 +44,6 @@ class User extends Authenticatable  // extends Model
         //
     ];
 
-    // todo - фабрика
     /**
      * @return UserFactory
      */
