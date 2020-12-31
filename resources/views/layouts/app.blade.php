@@ -3,9 +3,10 @@
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <x-layouts.partials.favicons/>
     <link rel="stylesheet" href="{{ mix('css/app.css', 'build') }}"/>
     <title>@yield('title') - Laravel</title>
-    <x-layouts.partials.favicons/>
+    <livewire:styles />
 </head>
 <x-layouts.partials.body>
     <div class="l--container bg-indigo-100 xl:w-full min-h-screen mx-auto px-4">
@@ -25,5 +26,6 @@
     <script src="{{ mix('js/manifest.js', 'build') }}" async></script>
     <script src="{{ mix('js/vendor.js', 'build') }}" async></script>
     <script src="{{ mix('js/app.js', 'build') }}" async></script>
+    <livewire:scripts />
 </x-layouts.partials.body>
 </html>

@@ -5,7 +5,7 @@ namespace Modules\User\Providers;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Database\Eloquent\Factory;
 
-use Illuminate\Support\Facades\Blade;
+use App\View\ModulesComponents;
 
 class UserServiceProvider extends ServiceProvider
 {
@@ -20,6 +20,14 @@ class UserServiceProvider extends ServiceProvider
     protected $moduleNameLower = 'user';
 
     /**
+     * @var array
+     */
+    protected $livewireComponents = [
+        'test'      => \Modules\User\Http\Livewire\Test::class,
+        'test.test' => \Modules\User\Http\Livewire\Test\Test::class,
+    ];
+
+    /**
      * Boot the application events.
      *
      * @return void
@@ -31,7 +39,7 @@ class UserServiceProvider extends ServiceProvider
         $this->registerViews();
         $this->loadMigrationsFrom(module_path($this->moduleName, 'Database/Migrations'));
 
-        Blade::componentNamespace('Modules\\User\\View\\Components', 'user');
+        ModulesComponents::register($this->moduleName, $this->moduleNameLower, $this->livewireComponents);
     }
 
     /**
@@ -71,7 +79,7 @@ class UserServiceProvider extends ServiceProvider
         $sourcePath = module_path($this->moduleName, 'Resources/views');
 
         $this->publishes([
-            $sourcePath => $viewPath
+            $sourcePath => $viewPath,
         ], ['views', $this->moduleNameLower . '-module-views']);
 
         $this->loadViewsFrom(array_merge($this->getPublishableViewPaths(), [$sourcePath]), $this->moduleNameLower);
@@ -98,7 +106,7 @@ class UserServiceProvider extends ServiceProvider
      *
      * @return array
      */
-    public function provides()
+    public function provides(): array
     {
         return [];
     }
