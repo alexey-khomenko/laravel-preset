@@ -3,7 +3,9 @@ module.exports = {
     // enabled: true,
     content: [
         './resources/views/**/*.blade.php',
-        './Modules/*/Resources/views/**/*.blade.php'
+        './resources/js/**/*.blade.js',
+        './Modules/*/Resources/views/**/*.blade.php',
+        './Modules/*/Resources/assets/js/**/*.js'
     ]
   },
   darkMode: false, // or 'media' or 'class'

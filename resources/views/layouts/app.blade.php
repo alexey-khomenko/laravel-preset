@@ -11,9 +11,6 @@
 <x-layouts.partials.body>
     <div class="l--container bg-indigo-100 xl:w-full min-h-screen mx-auto px-4">
         <x-layouts.partials.languages/>
-        @hasSection('breadcrumbs')
-            @yield('breadcrumbs')
-        @endif
 
         <div class="grid grid-cols-5 md:grid-cols-3 sm:grid-cols-2 xs:grid-cols-1 gap-3 my-3">
             @foreach (['login', 'register', 'reset', 'profile', 'logout'] as $route)
@@ -23,6 +20,7 @@
 
         @yield('content')
     </div>
+
     <script src="{{ mix('js/manifest.js', 'build') }}" async></script>
     <script src="{{ mix('js/vendor.js', 'build') }}" async></script>
     <script src="{{ mix('js/app.js', 'build') }}" async></script>
