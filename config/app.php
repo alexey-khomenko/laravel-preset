@@ -178,6 +178,8 @@ return [
         App\Providers\RouteServiceProvider::class,
         // App\Providers\TelescopeServiceProvider::class,
 
+        // Manual
+        App\Providers\HelpersLoaderProvider::class,
     ],
 
     /*
@@ -230,6 +232,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
 
+        // Manual
         'Agent' => Jenssegers\Agent\Facades\Agent::class,
     ],
 

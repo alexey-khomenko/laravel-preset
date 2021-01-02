@@ -1,9 +1,8 @@
 <?php
 
-namespace App\View\Components\Layouts\Partials;
+namespace App\Http\Livewire\Layout;
 
-use Illuminate\View\Component;
-use Jenssegers\Agent\Agent;
+use Livewire\Component;
 
 class Languages extends Component
 {
@@ -11,23 +10,19 @@ class Languages extends Component
     public $current;
 
     /**
-     * Create a new component instance.
-     *
      * @return void
      */
-    public function __construct()
+    public function mount()
     {
         $this->languages = \LaravelLocalization::getSupportedLocales();
         $this->current = \LaravelLocalization::getCurrentLocale();
     }
 
     /**
-     * Get the view / contents that represent the component.
-     *
      * @return \Illuminate\Contracts\View\View|string
      */
     public function render()
     {
-        return count($this->languages) > 0 ? view('layouts.partials.languages') : '';
+        return count($this->languages) > 0 ? view('layout.languages') : '';
     }
 }

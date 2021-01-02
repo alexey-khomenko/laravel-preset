@@ -8,5 +8,5 @@
         @endif
 >
     <source srcset="{{ $empty_src }}" type="image/webp" data-srcset="{{ $srcset }}"/>
-    <img src="{{ $empty_src }}" class="l--image-img lazyload" alt="{{ $alt }}" data-src="{{ $src }}"/>
+    <img src="{{ $empty_src }}" class="l--image-img lazyload" alt="{{ $alt }}" data-src="{{ $source }}"/>
 </picture>

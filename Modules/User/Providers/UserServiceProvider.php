@@ -2,10 +2,9 @@
 
 namespace Modules\User\Providers;
 
+use Config;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Database\Eloquent\Factory;
-
-use App\View\ModulesComponents;
 
 class UserServiceProvider extends ServiceProvider
 {
@@ -23,8 +22,7 @@ class UserServiceProvider extends ServiceProvider
      * @var array
      */
     protected $livewireComponents = [
-        'test'      => \Modules\User\Http\Livewire\Test::class,
-        'test.test' => \Modules\User\Http\Livewire\Test\Test::class,
+        'partials.h1' => \Modules\User\Http\Livewire\Partials\H1::class,
     ];
 
     /**
@@ -39,7 +37,7 @@ class UserServiceProvider extends ServiceProvider
         $this->registerViews();
         $this->loadMigrationsFrom(module_path($this->moduleName, 'Database/Migrations'));
 
-        ModulesComponents::register($this->moduleName, $this->moduleNameLower, $this->livewireComponents);
+        registerModuleComponents($this->moduleNameLower, $this->livewireComponents);
     }
 
     /**
@@ -114,7 +112,7 @@ class UserServiceProvider extends ServiceProvider
     private function getPublishableViewPaths(): array
     {
         $paths = [];
-        foreach (\Config::get('view.paths') as $path) {
+        foreach (Config::get('view.paths') as $path) {
             if (is_dir($path . '/modules/' . $this->moduleNameLower)) {
                 $paths[] = $path . '/modules/' . $this->moduleNameLower;
             }

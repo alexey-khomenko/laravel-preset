@@ -1,27 +1,23 @@
 <?php
 
-namespace Modules\User\View\Components\Partials;
+namespace Modules\User\Http\Livewire\Partials;
 
-use Illuminate\View\Component;
+use Livewire\Component;
 
 class H1 extends Component
 {
     public $title;
 
     /**
-     * Create a new component instance.
-     *
-     * @param String $title
+     * @param string $title
      * @return void
      */
-    public function __construct(String $title)
+    public function mount(string $title)
     {
         $this->title = $title;
     }
 
     /**
-     * Get the view / contents that represent the component.
-     *
      * @return \Illuminate\Contracts\View\View|string
      */
     public function render()

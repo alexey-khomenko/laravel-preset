@@ -5,6 +5,6 @@
 @endsection
 
 @section('content')
-    {{ Breadcrumbs::render('profile') }}
-    <x-user::partials.h1 :title="__('user::breadcrumbs.profile')"/>
+    <livewire:layout.breadcrumbs route="profile"/>
+    <livewire:user::partials.h1 :title="__('user::breadcrumbs.profile')"/>
 @endsection

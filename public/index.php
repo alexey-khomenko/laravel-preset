@@ -5,15 +5,6 @@ use Illuminate\Http\Request;
 
 define('LARAVEL_START', microtime(true));
 
-//<-----
-// todo: Сделать функцию mixAsset, доступную в views, из-за неё проблема с тестами
-function mixAsset ($path) {
-    $path = substr($path, 0, 1) === '/' ? substr($path, 1) : $path;
-
-    return env('APP_ENV') === 'production' ? mix($path, 'build') : asset('build/' . $path);
-}
-//<-----
-
 /*
 |--------------------------------------------------------------------------
 | Check If Application Is Under Maintenance

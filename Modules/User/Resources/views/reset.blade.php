@@ -5,6 +5,6 @@
 @endsection
 
 @section('content')
-    {{ Breadcrumbs::render('reset') }}
-    <x-user::partials.h1 :title="__('user::breadcrumbs.reset')"/>
+    <livewire:layout.breadcrumbs route="reset"/>
+    <livewire:user::partials.h1 :title="__('user::breadcrumbs.reset')"/>
 @endsection
