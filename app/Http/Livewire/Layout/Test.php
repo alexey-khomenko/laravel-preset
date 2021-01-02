@@ -5,13 +5,15 @@ namespace App\Http\Livewire\Layout;
 use Illuminate\Contracts\View\View;
 use Livewire\Component;
 
-class Favicons extends Component
+class Test extends Component
 {
+    public $message;
+
     /**
      * @return View|string
      */
     public function render()
     {
-        return view('layout.favicons');
+        return view('layout.test');
     }
 }

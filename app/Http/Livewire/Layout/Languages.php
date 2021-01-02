@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Layout;
 
+use Illuminate\Contracts\View\View;
 use Livewire\Component;
 
 class Languages extends Component
@@ -19,7 +20,7 @@ class Languages extends Component
     }
 
     /**
-     * @return \Illuminate\Contracts\View\View|string
+     * @return View|string
      */
     public function render()
     {
