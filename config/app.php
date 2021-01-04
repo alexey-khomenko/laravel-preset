@@ -179,7 +179,7 @@ return [
         // App\Providers\TelescopeServiceProvider::class,
 
         // Manual
-        App\Providers\HelpersLoaderProvider::class,
+
     ],
 
     /*
