@@ -22,6 +22,7 @@ class UserServiceProvider extends ServiceProvider
      * @var array
      */
     protected $livewireComponents = [
+        'layout.auth' => \Modules\User\Http\Livewire\Layout\Auth::class,
         'partials.h1' => \Modules\User\Http\Livewire\Partials\H1::class,
     ];
 

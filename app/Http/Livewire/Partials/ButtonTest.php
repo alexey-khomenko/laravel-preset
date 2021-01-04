@@ -22,6 +22,6 @@ class ButtonTest extends Component
      */
     public function render()
     {
-        return view('components.button-test');
+        return view('partials.button-test');
     }
 }

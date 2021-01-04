@@ -41,6 +41,6 @@ class Image extends Component
      */
     public function render()
     {
-        return view('components.image');
+        return view('partials.image');
     }
 }
