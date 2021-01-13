@@ -15,7 +15,7 @@ class ResetController extends Controller
 
     public function index()
     {
-        return view('user::reset');
+        return view('user::pages.reset');
     }
 
     public function check(Request $request)

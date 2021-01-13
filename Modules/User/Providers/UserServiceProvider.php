@@ -5,6 +5,7 @@ namespace Modules\User\Providers;
 use Config;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Database\Eloquent\Factory;
+use Illuminate\Support\Facades\Blade;
 
 class UserServiceProvider extends ServiceProvider
 {
@@ -21,6 +22,7 @@ class UserServiceProvider extends ServiceProvider
     /**
      * @var array
      */
+    // todo убрать
     protected $livewireComponents = [
         'layout.auth' => \Modules\User\Http\Livewire\Layout\Auth::class,
         'partials.h1' => \Modules\User\Http\Livewire\Partials\H1::class,
@@ -38,6 +40,9 @@ class UserServiceProvider extends ServiceProvider
         $this->registerViews();
         $this->loadMigrationsFrom(module_path($this->moduleName, 'Database/Migrations'));
 
+        Blade::componentNamespace('Modules\\' . $this->moduleName . '\\View\\Components', $this->moduleNameLower);
+
+        // todo убрать
         registerModuleComponents($this->moduleNameLower, $this->livewireComponents);
     }
 

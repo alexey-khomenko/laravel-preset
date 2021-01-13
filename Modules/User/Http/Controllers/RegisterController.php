@@ -15,7 +15,7 @@ class RegisterController extends Controller
 
     public function index()
     {
-        return view('user::register');
+        return view('user::pages.register');
     }
 
     public function check(Request $request)

@@ -3,7 +3,6 @@
   - use Illuminate\Support\Facades\Blade;
   - public function boot()
     - Blade::componentNamespace('Modules\\' . $moduleName . '\\View\\Components', $moduleNameLower);
-#### (или в хелпере с livewire)
 
 ### Component Class
 Modules/User/View/Components/Partials/H1.php

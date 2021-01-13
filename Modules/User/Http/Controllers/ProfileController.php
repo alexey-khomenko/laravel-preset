@@ -16,7 +16,7 @@ class ProfileController extends Controller
 
     public function index()
     {
-        return view('user::profile');
+        return view('user::pages.profile');
     }
 
     public function check(Request $request)

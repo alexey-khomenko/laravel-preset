@@ -18,6 +18,7 @@ if (!function_exists('mixAsset')) {
     }
 }
 
+// todo убрать
 if (!function_exists('registerModuleComponents')) {
     function registerModuleComponents(string $moduleNameLower, array $components)
     {

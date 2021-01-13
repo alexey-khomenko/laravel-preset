@@ -5,9 +5,9 @@ mix
     .setResourceRoot('/build/')
     .copyDirectory('resources/images', 'public/build/images')
     .copyDirectory('resources/favicons', 'public/build/favicons')
-    .js('resources/js/app.js', 'js')
+    .js('resources/scripts/app.js', 'js')
     .extract(['lazysizes'])
-    .sass('resources/css/app.scss', 'css')
+    .sass('resources/styles/app.scss', 'css')
     .options({
         postCss: [
             require('tailwindcss')('tailwind.config.js'),
