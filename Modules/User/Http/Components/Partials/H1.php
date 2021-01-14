@@ -1,8 +1,8 @@
 <?php
 
-namespace Modules\User\Http\Livewire\Partials;
+namespace Modules\User\Http\Components\Partials;
 
-use Livewire\Component;
+use Illuminate\View\Component;
 
 class H1 extends Component
 {
@@ -12,7 +12,7 @@ class H1 extends Component
      * @param string $title
      * @return void
      */
-    public function mount(string $title)
+    public function __construct(string $title)
     {
         $this->title = $title;
     }

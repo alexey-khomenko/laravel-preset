@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire\Layout;
+namespace App\Http\Livewire;
 
 use Illuminate\Contracts\View\View;
 use Livewire\Component;
@@ -14,6 +14,6 @@ class Test extends Component
      */
     public function render()
     {
-        return view('layout.test');
+        return view('livewire.test');
     }
 }

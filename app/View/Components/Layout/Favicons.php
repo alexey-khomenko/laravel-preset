@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Livewire\Layout;
+namespace App\View\Components\Layout;
 
 use Illuminate\Contracts\View\View;
-use Livewire\Component;
+use Illuminate\View\Component;
 
 class Favicons extends Component
 {

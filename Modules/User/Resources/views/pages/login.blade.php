@@ -5,6 +5,6 @@
 @endsection
 
 @section('content')
-    <livewire:layout.breadcrumbs route="login"/>
-    <livewire:user::partials.h1 :title="__('user::breadcrumbs.login')"/>
+    <x-layout.breadcrumbs route="login"/>
+    <x-user::partials.h1 :title="__('user::breadcrumbs.login')"/>
 @endsection

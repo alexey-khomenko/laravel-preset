@@ -3,15 +3,15 @@
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <livewire:layout.favicons/>
+    <x-layout.favicons/>
     <link rel="stylesheet" href="{{ mix('css/app.css', 'build') }}"/>
     <livewire:styles/>
     <title>@yield('title') - Laravel</title>
 </head>
 <x-layout.body>
     <div class="l--container bg-indigo-100 xl:w-full min-h-screen mx-auto px-4">
-        <livewire:layout.languages/>
-        <livewire:user::layout.auth/>
+        <x-layout.languages/>
+        <x-user::layout.auth/>
         @yield('content')
     </div>
 

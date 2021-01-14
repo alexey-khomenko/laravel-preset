@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Livewire\Partials;
+namespace App\View\Components\Partials;
 
 use Illuminate\Contracts\View\View;
-use Livewire\Component;
+use Illuminate\View\Component;
 
 class Image extends Component
 {
@@ -21,7 +21,7 @@ class Image extends Component
      * @param int $height
      * @return void
      */
-    public function mount(string $alt, string $src, string $srcset, int $width, int $height)
+    public function __construct(string $alt, string $src, string $srcset, int $width, int $height)
     {
         $this->alt = $alt;
         $this->source = mixAsset($src);

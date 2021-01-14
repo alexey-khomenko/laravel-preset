@@ -1,9 +1,9 @@
 <?php
 
-namespace Modules\User\Http\Livewire\Layout;
+namespace Modules\User\Http\Components\Layout;
 
 use Illuminate\Contracts\View\View;
-use Livewire\Component;
+use Illuminate\View\Component;
 
 class Auth extends Component
 {
@@ -17,7 +17,7 @@ class Auth extends Component
     /**
      * @return void
      */
-    public function mount()
+    public function __construct()
     {
         // todo есть роут / нет роута
         $this->pages = true;

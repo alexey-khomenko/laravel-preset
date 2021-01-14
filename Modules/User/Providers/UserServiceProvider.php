@@ -20,15 +20,6 @@ class UserServiceProvider extends ServiceProvider
     protected $moduleNameLower = 'user';
 
     /**
-     * @var array
-     */
-    // todo убрать
-    protected $livewireComponents = [
-        'layout.auth' => \Modules\User\Http\Livewire\Layout\Auth::class,
-        'partials.h1' => \Modules\User\Http\Livewire\Partials\H1::class,
-    ];
-
-    /**
      * Boot the application events.
      *
      * @return void
@@ -39,11 +30,6 @@ class UserServiceProvider extends ServiceProvider
         $this->registerConfig();
         $this->registerViews();
         $this->loadMigrationsFrom(module_path($this->moduleName, 'Database/Migrations'));
-
-        Blade::componentNamespace('Modules\\' . $this->moduleName . '\\View\\Components', $this->moduleNameLower);
-
-        // todo убрать
-        registerModuleComponents($this->moduleNameLower, $this->livewireComponents);
     }
 
     /**
@@ -87,6 +73,8 @@ class UserServiceProvider extends ServiceProvider
         ], ['views', $this->moduleNameLower . '-module-views']);
 
         $this->loadViewsFrom(array_merge($this->getPublishableViewPaths(), [$sourcePath]), $this->moduleNameLower);
+
+        Blade::componentNamespace('Modules\\' . $this->moduleName . '\\Http\\Components', $this->moduleNameLower);
     }
 
     /**

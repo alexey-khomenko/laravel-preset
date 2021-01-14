@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Livewire\Layout;
+namespace App\View\Components\Layout;
 
 use Illuminate\Contracts\View\View;
-use Livewire\Component;
+use Illuminate\View\Component;
 
 class Languages extends Component
 {
@@ -13,7 +13,7 @@ class Languages extends Component
     /**
      * @return void
      */
-    public function mount()
+    public function __construct()
     {
         $this->languages = \LaravelLocalization::getSupportedLocales();
         $this->current = \LaravelLocalization::getCurrentLocale();
