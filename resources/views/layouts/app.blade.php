@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <x-layout.favicons/>
     <link rel="stylesheet" href="{{ mix('css/app.css', 'build') }}"/>
-    <livewire:styles/>
     <title>@yield('title') - Laravel</title>
 </head>
 <x-layout.body>
@@ -18,6 +17,5 @@
     <script src="{{ mix('js/manifest.js', 'build') }}" async></script>
     <script src="{{ mix('js/vendor.js', 'build') }}" async></script>
     <script src="{{ mix('js/app.js', 'build') }}" async></script>
-    <livewire:scripts/>
 </x-layout.body>
 </html>
